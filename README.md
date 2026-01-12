@@ -1,6 +1,6 @@
 # DynamicPatch
 
-![dynamicpatch_pipeline](images/pipeline.jpg)
+![dynamicpatch_pipeline](image/pipeline.jpg)
 
 ### Requirement
 Our results were computed using Python 3.8 with packages and respective version noted in requirements.txt. 
