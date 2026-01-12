@@ -42,7 +42,7 @@ class DynamicPatch_Online_Base(torch.nn.Module):
             dynamic_weight_flag=True,
             bank_size=0.1,
             eval_flag=False,
-            ckpt_path='./NDSD_features.pth',
+            ckpt_path='./realiad_features.pth',
         **kwargs,
     ):
         print('online_base')
@@ -232,7 +232,7 @@ class DynamicPatch_Online_Base(torch.nn.Module):
             patch_pixel_shape = self.feature_shape[0]*self.feature_shape[1]
             norm_feature_shape = (norm_features.shape[0]//patch_pixel_shape)*patch_pixel_shape
             norm_features = norm_features[:norm_feature_shape,:]
-            torch.save(norm_features,'./NDSD_features.pth')
+            torch.save(norm_features,'./realiad_features.pth')
         else:
             print('load ckpt!')
             print(self.ckpt_path)
