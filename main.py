@@ -40,7 +40,7 @@ def parse_args():
     parser.add_argument("--log_group", type=str, default="group")
     parser.add_argument("--save_segmentation_images", action='store_true')
     parser.add_argument("--eval_flag", type=bool, default=False)
-    parser.add_argument("--ckpt_path", type=str, default="./lenovo_multi_class_0.1_norm_features.pth")
+    parser.add_argument("--ckpt_path", type=str, default="./realiad_multi_class_0.1_norm_features.pth")
     # backbone
     parser.add_argument("--backbone_names", "-b", type=str, action='append', default=['wideresnet50'])
     parser.add_argument("--layers_to_extract_from", "-le", type=str, action='append', default=['layer2', 'layer3'])
@@ -518,3 +518,4 @@ if __name__ == "__main__":
     LOGGER.info("Command line arguments: {}".format(" ".join(sys.argv)))
     args = parse_args()
     run(args)
+
