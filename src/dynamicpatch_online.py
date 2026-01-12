@@ -44,8 +44,8 @@ class DynamicPatch_Online(torch.nn.Module):
             dynamic_weight_flag=True,
             bank_size=0.1,
             eval_flag=False,
-            ckpt_path='./lenovo_multi_class_0.1_norm_features.pth',
-            ckpt_noisy_path='./lenovo_multi_class_0.1_noisy_features.pth',
+            ckpt_path='./realiad_multi_class_0.1_norm_features.pth',
+            ckpt_noisy_path='./realiad_multi_class_0.1_noisy_features.pth',
         **kwargs,
     ):
         print('online_noisy')
@@ -243,11 +243,11 @@ class DynamicPatch_Online(torch.nn.Module):
                                 noisy_features = torch.concat((noisy_sample_features,noisy_features),dim=0)
 
                                 sample_features, sample_indices = self.featuresampler.run(norm_features)
-                                torch.save(sample_features,'./lenovo_multi_class_0.08_norm_features.pth')
+                                torch.save(sample_features,'./realiad_multi_class_0.1_norm_features.pth')
 
                                 # noisy_patch_weight = patch_weight[torch.nonzero(noisy_sampling_weight)].squeeze()
                                 noisy_sample_features, noisy_sample_indices = self.noisy_featuresampler.run(noisy_features)
-                                torch.save(noisy_sample_features,'./lenovo_multi_class_0.08_noisy_features.pth')
+                                torch.save(noisy_sample_features,'./realiad_multi_class_0.1_noisy_features.pth')
 
                             features=[]
                             
